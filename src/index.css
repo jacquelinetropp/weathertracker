@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*SETTERS*/
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.5rem;
+}
+h5 {
+  font-size: 2rem
+}
+h6 {
+  font-size: 1.8rem;
+}
+ p{ 
+   font-size: 1.4rem;
+ }
+
+/*HELPERS*/
+
+.padding-xs {
+  padding: .5rem;
+}
+
+.padding-s {
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.center {
+  text-align: center;
+  justify-self:center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/*Weather Cards */
+
+.icon {
+  width: 30%;
+  margin: -5rem;
+}
+
+.cardtitle {
+  font-size: 1.7rem;
 }
