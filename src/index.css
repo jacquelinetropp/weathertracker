@@ -3,6 +3,7 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0E0D2B;
 }
 
 code {
@@ -60,11 +61,21 @@ h6 {
 
 /*Weather Cards */
 
+.displayweather {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5rem;
+ 
+}
+
 .icon {
-  width: 30%;
-  margin: -5rem;
+justify-self: center;
 }
 
 .cardtitle {
   font-size: 1.7rem;
+}
+
+table {
+  width: 100%;
 }

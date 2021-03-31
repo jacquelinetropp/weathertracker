@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const CurrentWrapper = styled.div`
+  grid-column: 1/3;
   border-radius: 20px;
   background-image: -webkit-gradient(
     linear,
@@ -10,8 +11,6 @@ const CurrentWrapper = styled.div`
     from(#046f94),
     to(#3493ad)
   );
-  width: 55%;
-  margin: 0 auto;
   color: var(--color-white);
 `;
 
@@ -23,7 +22,6 @@ const Content = styled.div`
 
 const Info = styled.div`
   grid-column: 1/2;
-  text-align: center;
 `;
 
 const Image = styled.div`
@@ -55,8 +53,9 @@ const CurrentWeather = ({ data }) => {
             {data.current.temp}
             <sup>o</sup>
           </h1>
+          <h5>Feels like {data.current.feels_like}<sup>o</sup></h5>
           
-          <div className="flex center">
+          <div className="flex">
             <h6 className="padding-xs">{data.current.weather[0].main}</h6>
             <p className="padding-xs">{data.current.weather[0].description}</p>
           </div>
