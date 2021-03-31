@@ -2,6 +2,7 @@ import React from "react";
 import CurrentDetails from "../CurrentDetails/CurrentDetails";
 
 import CurrentWeather from '../CurrentWeather/CurrentWeather';
+import Hourly from "../Hourly/Hourly";
 
 const WeatherCard = ({data}) => {
   // const { data } = props;
@@ -17,29 +18,8 @@ const WeatherCard = ({data}) => {
         <React.Fragment>
         <CurrentWeather data={data}/>
         <CurrentDetails data={data} />
-          <div className="maincard">
-            <span className="cardtitle">
-              {data.lat} , {data.lon}. Weather
-            </span>
-            <span className="cardsubtitle">
-              As of {new Date().toLocaleTimeString()}
-            </span>
-
-            <h1>
-              {" "}
-              {data.current.temp}
-              <sup>o</sup>
-            </h1>
-           
-
-            <span className="weather-description">
-              {" "}
-              <img className="weather-icon" src={iconurl} alt="" />
-            </span>
-          </div>
           
-  
-           
+        <Hourly weather={data.hourly} />
        
         </React.Fragment>
       ) : (

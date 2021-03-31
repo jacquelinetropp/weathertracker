@@ -63,8 +63,9 @@ const CurrentWeather = ({ data }) => {
         <Image>
     
           <img className="icon" src={iconurl} alt="weather symbol" />
-          <h5 className="padding-s">
-            {data.daily[0].temp.max} <sup>o</sup>/{data.daily[0].temp.min}{" "}
+          <h5>{data.daily[0].temp.max} <sup>o</sup>/</h5>
+          <h5>
+          {data.daily[0].temp.min}
             <sup>o</sup>
           </h5>
         </Image>
