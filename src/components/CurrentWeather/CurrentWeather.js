@@ -35,7 +35,6 @@ const Image = styled.div`
 `;
 
 const CurrentWeather = ({ data }) => {
-  console.log(data);
   const iconurl =
     "http://openweathermap.org/img/w/" +
     `${!data ? null : data.current.weather[0].icon}` +

@@ -2,11 +2,12 @@ import React from "react";
 import CurrentDetails from "../CurrentDetails/CurrentDetails";
 
 import CurrentWeather from '../CurrentWeather/CurrentWeather';
+import DailyWeather from "../DailyWeather/DailyWeather";
 import Hourly from "../Hourly/Hourly";
 
 const WeatherCard = ({data}) => {
   // const { data } = props;
-  // console.log(data); 
+
   const iconurl =
     "http://openweathermap.org/img/w/" +
     `${data.cod !== 404 ? data.current.weather[0].icon : null}` +
@@ -18,8 +19,8 @@ const WeatherCard = ({data}) => {
         <React.Fragment>
         <CurrentWeather data={data}/>
         <CurrentDetails data={data} />
-          
-        <Hourly weather={data.hourly} />
+        <DailyWeather data={data.daily} />
+        <Hourly weather={data.hourly} timezone={data.timezone}/>
        
         </React.Fragment>
       ) : (
