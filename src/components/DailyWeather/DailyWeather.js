@@ -8,6 +8,23 @@ const DailyWrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     padding: 1rem;
     grid-gap: 1rem;
+
+    @media only screen and (max-width: 900px) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+
+  
+  @media only screen and (max-width: 768px) {
+      grid-column:1/-1;
+      grid-row: 3/4;
+      padding: 1rem 0;
+  }
+
+  @media only screen and (max-width: 425px) {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
 `;
 
 const DailyContent = styled.div`
@@ -30,15 +47,13 @@ const DailyWeather = ({data}) => {
           dayOfTheWeek.push((week[(today.getDay() + i) % 7]));
         }
       }
-      console.log(dayOfTheWeek);
+
     }
     displayDate();
-
-    console.log(data);
     return (
         <DailyWrapper>
         {data.map((day, index) => {
-          console.log(dayOfTheWeek[index]);
+       
             return (
               <DailyContent key={Math.floor(Math.random() * 99)}>
               <h6>{`${dayOfTheWeek[index]}`}</h6>

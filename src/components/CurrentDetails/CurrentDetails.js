@@ -7,6 +7,17 @@ const DetailsWrapper = styled.div`
     border-radius: 20px;
     background-color: var(--color-white);
 
+    @media only screen and (max-width: 900px) {
+      grid-column: 3/-1;
+      grid-row: 1/2;
+  }
+
+  
+  @media only screen and (max-width: 768px) {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+  }
+
 `;
 
 const DetailsInfo = styled.div`
@@ -60,6 +71,7 @@ const CurrentDetails = ({ data }) => {
 
         <div className="section2">
           <table>
+          <tbody>
             <tr>
               <td>
                 <h6>Wind</h6>
@@ -99,6 +111,7 @@ const CurrentDetails = ({ data }) => {
                 </p>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
       </DetailsInfo>

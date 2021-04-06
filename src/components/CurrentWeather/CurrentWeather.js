@@ -12,6 +12,12 @@ const CurrentWrapper = styled.div`
     to(#3493ad)
   );
   color: var(--color-white);
+
+  
+  @media only screen and (max-width: 768px) {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+  }
 `;
 
 const Content = styled.div`

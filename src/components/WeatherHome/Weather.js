@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 const WeatherWrapper = styled.div`
 padding: 3rem;
-height: 100vh;
+@media only screen and (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -79,14 +81,14 @@ const Weather = () => {
       <form>
         <StyledInput
           type="text"
-          placeholder="city"
+          placeholder="Longitude"
           name="city"
           onChange={(e) => handleChange(e)}
         />
       
         <StyledInput
           type="text"
-          placeholder="Country"
+          placeholder="Latitude"
           name="country"
           onChange={(e) => handleChange(e)}
         />
