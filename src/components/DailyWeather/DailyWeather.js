@@ -55,7 +55,7 @@ const DailyWeather = ({data}) => {
         {data.map((day, index) => {
        
             return (
-              <DailyContent key={Math.floor(Math.random() * 99)}>
+              <DailyContent key={(Math.random() * 99)}>
               <h6>{`${dayOfTheWeek[index]}`}</h6>
                 <img
                   src={

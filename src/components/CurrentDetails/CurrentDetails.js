@@ -32,6 +32,7 @@ const CurrentDetails = ({ data }) => {
       <DetailsInfo>
         <div className="section1">
           <table>
+          <tbody>
             <tr>
               <td>
                 <h6>High/Low</h6>
@@ -66,6 +67,7 @@ const CurrentDetails = ({ data }) => {
                 <p>{data.current.visibility} m</p>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
 
