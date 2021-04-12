@@ -11,12 +11,13 @@ const WeatherWrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   text-align: center;
+
 `;
 
 const Header = styled.h1`
   font-family: "Amiri", serif;
   font-size: 35px;
-  color: var(--color-main);
+  color: var(--color-white);
 `;
 
 const StyledInput = styled.input`
@@ -27,6 +28,10 @@ const StyledInput = styled.input`
   margin: 5px;
   &:focus {
     border: 2px solid var(--color-mainLight);
+  }
+
+  &::placeholder {
+    color: var(--color-white);
   }
 `;
 
@@ -53,7 +58,7 @@ const Weather = () => {
       alert("Add values");
     } else {
       const coordinates = await fetch(
-        `http://www.mapquestapi.com/geocoding/v1/address?key=${FirstKey}&location=${form.city}`
+        `https://www.mapquestapi.com/geocoding/v1/address?key=${FirstKey}&location=${form.city}`
       ) 
         .then(res => res.json())
         .then(data => data);
