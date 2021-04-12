@@ -17,13 +17,16 @@ const DetailsWrapper = styled.div`
       grid-column: 1/-1;
       grid-row: 2/3;
   }
-
 `;
 
 const DetailsInfo = styled.div`
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 padding: 1rem;
+
+@media only screen and (max-width: 900px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const CurrentDetails = ({ data }) => {
@@ -34,7 +37,7 @@ const CurrentDetails = ({ data }) => {
           <table>
           <tbody>
             <tr>
-              <td>
+              <td className="bigrow">
                 <h6>High/Low</h6>
               </td>
               <td>

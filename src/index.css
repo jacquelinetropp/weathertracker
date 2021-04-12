@@ -86,3 +86,7 @@ margin: 0 auto;
 table {
   width: 100%;
 }
+
+.bigrow {
+  width: 63.5%;
+}

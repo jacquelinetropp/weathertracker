@@ -24,6 +24,7 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 2rem;
+  
 `;
 
 const Info = styled.div`
