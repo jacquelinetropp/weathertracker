@@ -24,6 +24,7 @@ const StyledInput = styled.input`
   border: none;
   padding: 1rem;
   background-color: rgba(106, 174, 217, 0.6);
+  color: white;
   border-radius: 4px;
   margin: 5px;
   &:focus {
@@ -39,6 +40,7 @@ const StyledButton = styled.button`
   padding: 1rem;
   border-radius: 4px;
   background-color: rgba(106, 174, 217, 0.6);
+  color: white;
   &:hover {
     background-color: rgba(106, 174, 217, 0.8);
   }
@@ -64,9 +66,6 @@ const Weather = () => {
         .then(data => data);
       const lat = coordinates.results[0].locations[0].latLng.lat;
       const lng = coordinates.results[0].locations[0].latLng.lng;
-
-      console.log(lat, lng);
-
 
       const data = await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=imperial&APPID=${APIKEY}`
@@ -99,8 +98,7 @@ const Weather = () => {
             type="text"
             placeholder="Zipcode"
             name="city"
-            onChange={(e) => handleChange(e)}
-          />
+            onChange={(e) => handleChange(e)}          />
 
           <StyledButton onClick={(e) => weatherData(e)}>Submit</StyledButton>
         </form>
