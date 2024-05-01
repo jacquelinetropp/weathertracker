@@ -52,28 +52,30 @@ const Weather = () => {
     city: "",
     country: "",
   });
-  const FirstKey = "AIzaSyB4WVHiJ1miyMfG_xCSaBhhxT4ACCDmEoA";
-  const APIKEY = "7fa77fe3445b5ebdef0bae325c71544c";
+  const firstKey = process.env.REACT_APP_GOOGLE_API;
+  const secondKey = process.env.REACT_APP_WEATHER_API;
   async function weatherData(e) {
     e.preventDefault();
     if (form.city == "") {
       alert("Add values");
     } else {
       const coordinates = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${form.city}&key=${FirstKey}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${form.city}&key=${firstKey}`
       ) 
         .then(res => res.json())
         .then(data => data);
-        const lat = coordinates.results[0].geometry.location.lat;
-        const lng = coordinates.results[0].geometry.location.lng;
+     const lat = coordinates.results[0].geometry.location.lat;
+    const lng = coordinates.results[0].geometry.location.lng;
+      console.log(coordinates);
 
-      const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=imperial&APPID=${APIKEY}`
-      )
-        .then((res) => res.json())
-        .then((data) => data);
+     const data = await fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=imperial&APPID=${secondKey}`)
+    
+     .then((res) => res.json())
+         .then((data) => data);
+         console.log(data);
 
-      setWeather({ data: data });
+       setWeather({ data: data });
     }
   }
 
