@@ -52,7 +52,7 @@ const Weather = () => {
     city: "",
     country: "",
   });
-  const FirstKey = "ObfysELOcnDcQmgVmGvAGGS4ohPJlfFF";
+  const FirstKey = "AIzaSyB4WVHiJ1miyMfG_xCSaBhhxT4ACCDmEoA";
   const APIKEY = "7fa77fe3445b5ebdef0bae325c71544c";
   async function weatherData(e) {
     e.preventDefault();
@@ -60,12 +60,12 @@ const Weather = () => {
       alert("Add values");
     } else {
       const coordinates = await fetch(
-        `https://www.mapquestapi.com/geocoding/v1/address?key=${FirstKey}&location=${form.city}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${form.city}&key=${FirstKey}`
       ) 
         .then(res => res.json())
         .then(data => data);
-      const lat = coordinates.results[0].locations[0].latLng.lat;
-      const lng = coordinates.results[0].locations[0].latLng.lng;
+        const lat = coordinates.results[0].geometry.location.lat;
+        const lng = coordinates.results[0].geometry.location.lng;
 
       const data = await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=imperial&APPID=${APIKEY}`
